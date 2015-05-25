@@ -1,0 +1,10 @@
+wait 3 sec
+AA 01 09 81 01 6A 00 BD 02 60 01 10 2C BB
+
+
+wait 1 sec 
+AA 01 01 82 82 BB
+
+
+wait 1 sec 
+AA 01 09 81 01 6A 00 BD 02 C6 01 10 8A BB
