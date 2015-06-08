@@ -85,8 +85,8 @@
 
 
 //Heart Beat
-#define 	HEART_BEAT					PORTAbits.RA3
-#define 	HEART_BEAT_DIRECTION		TRISAbits.TRISA3
+#define 	HEART_BEAT					PORTEbits.RE0
+#define 	HEART_BEAT_DIRECTION		TRISEbits.TRISE0
 
 
 //Reset Switch

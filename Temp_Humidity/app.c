@@ -86,14 +86,16 @@ void app_task( void )
 
 	DigitDisplay_updateBufferBinary(app.buffer);
 
-	if ( app.count > 1 )
+	if ( app.count > 20 )
 	{
 		switch (RESET_SWITCH)
 		{
-			case 1:	if ((app.temparature < app.tempLowLimit) || (app.temparature > app.tempHighLimit)) // check for high and low limits of temparature
+			case 1:	if ((app.temparature < app.tempLowLimit)
+						 || (app.temparature > app.tempHighLimit)) // check for high and low limits of temparature
 						app.setAlarm = 1;
 			
-					else if ((app.humidity < app.humLowLimit) || (app.humidity > app.humHighLimit))		// check for high and low limits of humidity
+					else if ((app.humidity < app.humLowLimit)
+							 || (app.humidity > app.humHighLimit))		// check for high and low limits of humidity
 						app.setAlarm = 1;
 			
 					else 

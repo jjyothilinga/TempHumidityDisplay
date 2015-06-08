@@ -37,7 +37,7 @@
 *------------------------------------------------------------------------------
 */
 
-#pragma config OSC      = HSPLL
+#pragma config OSC      = INTIO67
 #pragma config FCMEN    = OFF
 #pragma config IESO     = OFF
 #pragma config PWRT     = OFF

@@ -37,7 +37,7 @@
 *------------------------------------------------------------------------------
 */
 
-#pragma config OSC      = HSPLL
+#pragma config OSC      = INTIO67
 #pragma config FCMEN    = OFF
 #pragma config IESO     = OFF
 #pragma config PWRT     = OFF
@@ -163,7 +163,7 @@ void main(void)
 	TMR1_init(DIGIT_REFRESH_PERIOD,DigitDisplay_task);							//initialize timer1
 //	extInterruptInit();		//enable portb change on interrupt
 	
-	COM_init(CMD_SOP,CMD_EOP,RESP_SOP,RESP_EOP,APP_comCallBack);
+//	COM_init(CMD_SOP,CMD_EOP,RESP_SOP,RESP_EOP,APP_comCallBack);
 	ADC_init();
 	
 	app_init();
@@ -180,7 +180,7 @@ void main(void)
 			count++;
 		}
 
-		if( count >= 4 )
+		if( count >= 10 )
 		{
 			ADC_task();
 			app_task();
@@ -194,7 +194,7 @@ void main(void)
 		}
 
 		
-		COM_task();
+		//COM_task();
 		ClrWdt();				// Kick the dog
     }
 

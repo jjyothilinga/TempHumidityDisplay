@@ -211,8 +211,8 @@ BOOL DigitDisplay_updateBuffer(UINT8 *buffer)
 	for ( i = 0 ; i < digitDisplay.noDigits ; i++)
 	{
 
-	//	if ( validate(buffer[i]) == FAILURE )
-	//		return FAILURE;
+		if ( validate(buffer[i]) == FAILURE )
+			return FAILURE;
 	}
 	for ( i = 0 ; i < digitDisplay.noDigits ; i++)
 	{
@@ -399,45 +399,18 @@ void DigitDisplay_clear()
 */
 
 
-#ifdef __COMMON_CATHODE__
-
-static void writeToDisplayPort( UINT8 value )
-{
-
-	DIGIT_SEL_A = 1;		//switch off display
-	DIGIT_SEL_B = 1;
-
-
-	DISPLAY_PORT = ~(value);
-
-	switch( digitDisplay.digitIndex )
-	{
-		case 0:
-			DIGIT_SEL_A = 0;
-			
-		break;
-
-		case 1:
-   			DIGIT_SEL_B = 0;
-		break;
-
-
-
-		default:
-		break;
-	}
-	
-}
-
-#else
 
 static void writeToDisplayPort( UINT8 value )
 {
 
 	DIGIT_SEL_A = 0;		//switch off display
 	DIGIT_SEL_B = 0;
+	DIGIT_SEL_C = 0;
+	DIGIT_SEL_D = 0;
+	DIGIT_SEL_E = 0;
+	DIGIT_SEL_F = 0;
 
-
+	Delay10us(2);
 	DISPLAY_PORT = (value);
 
 	switch( digitDisplay.digitIndex )
@@ -451,14 +424,33 @@ static void writeToDisplayPort( UINT8 value )
    			DIGIT_SEL_B = 1;
 		break;
 
+		case 2:
+   			DIGIT_SEL_C = 1;
+
+   		break;
+
+		case 3:
+   			DIGIT_SEL_D = 1;
+		
+   		break;
+
+		case 4:
+   			DIGIT_SEL_E = 1;
+		
+   		break;
+
+		case 5:
+   			DIGIT_SEL_F = 1;
+		
+   		break;
 
 		default:
 		break;
 	}
-	
+
+	Delay10us(2);	
 }
 
-#endif
 
 
 

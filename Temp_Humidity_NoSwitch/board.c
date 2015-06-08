@@ -100,6 +100,10 @@ void BRD_init(void)
 	
 	ADCON1= 0x0D;
 
+	// Internal oscillator setup
+	OSCCON |= 0X70; 		//internal oscillator 8MHz
+	OSCTUNEbits.PLLEN = 1;	//PLL Enable
+
 	TX_EN_DIRECTION = PORT_OUT;
 
 	TEMP_ANALOG_INPUT_DIRECTION = 1;	//Set direction for analog pin

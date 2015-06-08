@@ -24,7 +24,7 @@
 
 //DIGIT DISPLAY TEST
 #define __DISPLAY_TEST__
-#define __COMMON_CATHODE__
+//#define __COMMON_CATHODE__
 
 
 //#define __ADC_COUNT_DISPLAY__
