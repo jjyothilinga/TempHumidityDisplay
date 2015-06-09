@@ -22,7 +22,7 @@ ADC adc = {0};
 
 void ADC_init( void )
 {
-	OpenADC(ADC_FOSC_32 & ADC_RIGHT_JUST & ADC_2_TAD,	 //open adc with required 
+	OpenADC(ADC_FOSC_16 & ADC_RIGHT_JUST & ADC_2_TAD,	 //open adc with required 
 			ADC_CH0 & ADC_INT_ON & ADC_REF_VDD_VSS,	 //configuration 
 			ADC_2ANA); 	
 

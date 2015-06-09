@@ -86,7 +86,7 @@ void app_task( void )
 
 	DigitDisplay_updateBufferBinary(app.buffer);
 
-	if ( app.count > 20 )
+	if ( app.count > 15 )
 	{
 		switch (RESET_SWITCH)
 		{

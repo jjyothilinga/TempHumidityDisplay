@@ -143,7 +143,7 @@ UINT8 message[]="IDEONICS";
 */
 const UINT8 LED_MAP[11] = {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x00};
 #define DIGIT_REFRESH_PERIOD	(65535 - 5000)
-#define TICK_PERIOD	(65535 - 20000)
+#define TICK_PERIOD	(65535 - 8000)
 
 
 
@@ -173,16 +173,16 @@ void main(void)
    	while(TRUE)
     {
 	
-		if(keypadUpdate_count >= 10)
+		if(keypadUpdate_count >= 200)
 		{
-			
+			ADC_task();
 			keypadUpdate_count = 0;
 			count++;
 		}
 
-		if( count >= 10 )
+		if( count >= 5 )
 		{
-			ADC_task();
+	
 			app_task();
 			count = 0;
 		}
