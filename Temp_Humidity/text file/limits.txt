@@ -1,0 +1,4 @@
+temp  - upper - 01F4(200) 
+	lower - 00C8(500)
+humudity - upper - 02EE(750)
+	   lower - 015E(350)

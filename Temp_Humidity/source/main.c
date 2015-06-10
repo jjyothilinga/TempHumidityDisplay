@@ -37,7 +37,7 @@
 *------------------------------------------------------------------------------
 */
 
-#pragma config OSC      = INTIO67
+#pragma config OSC      = INTIO67//HSPLL
 #pragma config FCMEN    = OFF
 #pragma config IESO     = OFF
 #pragma config PWRT     = OFF
@@ -173,16 +173,16 @@ void main(void)
    	while(TRUE)
     {
 	
-		if(keypadUpdate_count >= 200)
+		if(keypadUpdate_count >= 10)
 		{
-			ADC_task();
+
 			keypadUpdate_count = 0;
 			count++;
 		}
 
-		if( count >= 5 )
+		if( count >= 50 )
 		{
-	
+			ADC_task();	
 			app_task();
 			count = 0;
 		}
